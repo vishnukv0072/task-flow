@@ -1,0 +1,19 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="app-shell" [attr.data-sidebar-open]="sidebarOpen()">
+  <app-sidebar
+    [open]="sidebarOpen()"
+    (toggle)="toggleSidebar()"
+  ></app-sidebar>
+
+  <div class="main-area">
+    <app-topbar
+      (toggleSidebar)="toggleSidebar()"
+      [pageTitle]="pageTitle()"
+      [unread]="unreadNotifications()"
+    ></app-topbar>
+
+    <main id="main-content" class="content" role="main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

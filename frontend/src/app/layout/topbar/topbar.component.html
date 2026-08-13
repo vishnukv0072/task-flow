@@ -1,0 +1,26 @@
+<header class="topbar">
+  <button class="menu-btn" aria-label="Toggle navigation" (click)="emitToggle()">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/>
+    </svg>
+  </button>
+
+  <div class="title" role="heading" aria-level="1">{{ pageTitle || 'TaskFlow' }}</div>
+
+  <div class="top-actions">
+    <a routerLink="/notifications" class="notif" aria-label="Notifications">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6v-5a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2z"/>
+      </svg>
+      @if (unread > 0) {
+        <span class="badge" aria-hidden="true">{{ unread }}</span>
+      }
+    </a>
+
+    <div class="avatar" title="Account">
+      <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/>
+      </svg>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: #111;
+  color: #fff;
+  z-index: 9999;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  transition: grid-template-columns 0.2s ease;
+}
+
+.app-shell[data-sidebar-open='false'] {
+  grid-template-columns: 64px 1fr;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--app-bg, #f7f9fb);
+}
+
+.content {
+  padding: 1.25rem;
+  overflow: auto;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 880px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell[data-sidebar-open='true'] {
+    grid-template-columns: 1fr;
+  }
+}

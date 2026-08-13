@@ -1,0 +1,21 @@
+<aside class="sidebar" [class.open]="open" aria-label="Primary navigation">
+  <div class="brand">
+    <a routerLink="/dashboard" class="logo">TaskFlow</a>
+  </div>
+
+  <nav class="nav" role="navigation" aria-label="Primary">
+    @for (item of nav; track item.path) {
+      <a
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLink]="item.path"
+        (click)="onNavClick()"
+      >
+        <span class="icon" aria-hidden="true">{{ item.icon }}</span>
+        <span class="label">{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+
+  <div class="sidebar-footer">v0.1</div>
+</aside>

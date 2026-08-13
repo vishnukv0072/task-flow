@@ -5,16 +5,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   selector: 'app-feature-placeholder',
   imports: [CommonModule],
-  template: `
-    <section class="placeholder">
-      <h2>{{ title }}</h2>
-      <p>This is a placeholder page for {{ title }}.</p>
-    </section>
-  `,
-  styles: [
-    `
-    .placeholder { max-width: 900px; margin: 0 auto; }
-    `
-  ]
+  templateUrl: './placeholder.component.html',
+  styleUrl: './placeholder.component.scss'
 })
-export class FeaturePlaceholderComponent { @Input() title = 'Feature'; }
+export class FeaturePlaceholderComponent {
+  @Input() title = 'Feature';
+}
